@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px; /* Adjust the spacing between items for smaller screens */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+        }
+
+        .navbar a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .navbar img {
+            max-height: 30px;
+            border-radius: 4px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+            justify-content: space-around; /* Center items horizontally */
+            width: 90%; /* Adjust the width of the flex container */
+            margin: 80px auto; /* Center the container and adjust the margin as needed */
+        }
+
+        .flex-item {
+            flex: 0 0 48%; /* Adjust the width of each item, allowing for a small gap between them */
+            overflow: hidden;
+            position: relative;
+            margin: 10px; /* Add some margin between items */
+        }
+
+        .flex-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            vertical-align: top;
+        }
+
+        .button-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .button-overlay:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .button-text {
+            color: #333;
+            font-size: 18px;
+        }
+
+        .footer {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .social-icons img {
+            max-height: 30px;
+            margin: 0 10px;
+        }
+
+        /* Media query for smaller screens (iPhone) */
+        @media screen and (max-width: 600px) {
+            .flex-item {
+                flex: 0 0 100%; /* Make each item take full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <img src="logo.jpeg" alt="Logo">
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<div class="flex-container">
+    <div class="flex-item">
+        <img src="driver.jpeg" alt="Driver Image">
+        <div class="button-overlay">
+            <div class="button-text">Driver</div>
+        </div>
+    </div>
+    <div class="flex-item">
+        <img src="owner.jpeg" alt="Bike Owner Image">
+        <div class="button-overlay">
+            <div class="button-text">Bike Owner</div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="social-icons">
+        <!-- Replace these placeholders with your actual social media logos -->
+        <img src="whatsapp-logo.jpeg" alt="WhatsApp">
+        <img src="telegram-logo.jpeg" alt="Telegram">
+        <img src="facebook-logo.jpeg" alt="Facebook">
+        <img src="instagram-logo.jpeg" alt="Instagram">
+    </div>
+</div>
+
+</body>
+</html>
