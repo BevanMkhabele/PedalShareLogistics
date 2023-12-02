@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar with Logo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px; /* Adjust the spacing between items for smaller screens */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+        }
+
+        .navbar a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .navbar img {
+            max-height: 30px;
+            border-radius: 4px;
+        }
+
+        .content {
+            margin-top: 60px; /* Adjust the margin to prevent content from being hidden behind the fixed navbar */
+            padding: 20px;
+            text-align: center; /* Align the content to the center */
+            font-family: Arial;
+        }
+
+        .content h2 {
+            color: black; /* Set the default color for the h2 */
+            display: inline; /* Make the spans inline */
+        }
+
+        .pedal {
+            color: limegreen; /* Set the color for "share" */
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 16px;
+            text-decoration: none;
+            color: black;
+            background-color: limegreen;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+        }
+
+        .cta-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        @media (max-width: 600px) { /* Adjust this breakpoint as needed */
+            .navbar {
+                flex-direction: column; /* Stack items vertically on smaller screens */
+            }
+
+            .navbar a {
+                margin: 10px 0; /* Adjust spacing for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <img src="logo.jpeg" alt="Logo">
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<div class="content">
+    <h2><span class="pedal">Pedal</span> Share</h2>
+    <p>Welcome to Pedal Share, your premier bike rental agency. At Pedal Share, we connect bike owners with those in need of a convenient and eco-friendly transportation solution. Whether you're a bike enthusiast looking to share your ride or a commuter in search of a hassle-free way to get to work, Pedal Share has you covered. Join our community and pedal your way to a sustainable and efficient lifestyle.</p>
+    <a href="#start-journey" class="cta-button">Start Your Journey</a>
+</div>
+
+</body>
+</html>
