@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Owner Uploads</title>
+    <title>Driver Uploads</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+           
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -116,9 +117,25 @@
         }
 
         .button-container {
-          
-      margin-bottom:150px
+          margin-bottom:150px;
         }
+        
+        .input-container {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .input-container input {
+            width: 48%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
         .title{
             font-weight:bold;
         }
@@ -138,7 +155,16 @@
 
 <div class="section">
     <h2>What the Owners Must Upload</h2>
-    <p>Owners are required to upload the following documents and information:</p>
+    <p>Drivers are required to upload the following documents and information:</p>
+
+    <!-- Input fields for name, surname, email, and phone number -->
+    <div class="input-container">
+        <input type="text" id="name" name="name" placeholder="Name">
+        <input type="text" id="surname" name="surname" placeholder="Surname">
+        <input type="email" id="email" name="email" placeholder="Email">
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+    </div>
+
     <ul>
         <li class="title">Valid ID Proof
             <div class="form-container">
@@ -146,21 +172,21 @@
                 <input type="file" id="idProof" name="idProof" accept=".pdf, .jpg, .png" class="file-input">
             </div>
         </li>
-        <li class="title">Proof of Ownership for the Bike
+        <li class="title">Proof of Residence
             <div class="form-container">
-                <label for="ownershipProof">Upload Ownership Proof:</label>
+                <label for="ownershipProof">Upload Proof of residence:</label>
                 <input type="file" id="ownershipProof" name="ownershipProof" accept=".pdf, .jpg, .png" class="file-input">
             </div>
         </li>
-        <li class="title">Insurance Documents
+        <li class="title">3 months bank-statements
             <div class="form-container">
-                <label for="insuranceDocuments">Upload Insurance Documents:</label>
+                <label for="insuranceDocuments">Upload 3 months :</label>
                 <input type="file" id="insuranceDocuments" name="insuranceDocuments" accept=".pdf, .jpg, .png" class="file-input">
             </div>
         </li>
-        <li class="title">Service History of the Bike
+        <li class="title">Valid app profile 
             <div class="form-container">
-                <label for="serviceHistory">Upload Service History:</label>
+                <label for="serviceHistory">Upload a screenshot of a valid profile :</label>
                 <input type="file" id="serviceHistory" name="serviceHistory" accept=".pdf, .jpg, .png" class="file-input">
             </div>
         </li>
@@ -172,7 +198,9 @@
     <div class="social-icons">
         <!-- Replace these placeholders with your actual social media logos -->
         <img src="whatsapp-logo.jpeg" alt="WhatsApp">
-        <img src="telegram-logo.jpeg" alt="Telegram">
+        <img src="telegram-logo.jpeg" alt="Telegram
+
+">
         <img src="facebook-logo.jpeg" alt="Facebook">
         <img src="instagram-logo.jpeg" alt="Instagram">
     </div>
