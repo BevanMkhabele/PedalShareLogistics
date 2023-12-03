@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Owner Uploads</title>
+    <title>Choose</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background: url('background.jpeg') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -32,8 +34,8 @@
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
-            transition: background-color 0.3s, color 0.3s;
+            margin: 0 10px; /* Adjust the spacing between items for smaller screens */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
         }
 
         .navbar a:hover {
@@ -46,38 +48,50 @@
             border-radius: 4px;
         }
 
-        .section {
-            padding: 30px;
-            text-align: center;
-            margin-top:30px;
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+            justify-content: space-around; /* Center items horizontally */
+            width: 90%; /* Adjust the width of the flex container */
+            margin: 80px auto; /* Center the container and adjust the margin as needed */
         }
 
-        .section h2 {
-            color: #333;
+        .flex-item {
+            flex: 0 0 48%; /* Adjust the width of each item, allowing for a small gap between them */
+            overflow: hidden;
+            position: relative;
+            margin: 10px; /* Add some margin between items */
         }
 
-        .form-container {
-            margin-top: 20px;
-        }
-
-        .form-container label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .file-input {
-            display: block;
+        .flex-item img {
             width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            background-color: #fff;
+            height: auto;
+            border-radius: 8px;
+            vertical-align: top;
+        }
+
+        .button-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #333;
+            border-radius: 8px;
             cursor: pointer;
         }
 
-        .file-input:hover {
-            background-color: #eee;
+        .button-overlay:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .button-text {
+            color: #333;
+            font-size: 18px;
         }
 
         .footer {
@@ -98,30 +112,6 @@
             max-height: 30px;
             margin: 0 10px;
         }
-
-        .submit-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 20px;
-        }
-
-        .submit-button:hover {
-            background-color: #45a049;
-        }
-
-        .button-container {
-          
-      margin-bottom:150px
-        }
-        .title{
-            font-weight:bold;
-        }
     </style>
 </head>
 <body>
@@ -136,36 +126,19 @@
     </div>
 </div>
 
-<div class="section">
-    <h2>What the Drivers Must Upload</h2>
-    <p>Drivers are required to upload the following documents and information:</p>
-    <ul>
-        <li class="title">Valid ID Proof
-            <div class="form-container">
-                <label for="idProof">Upload ID Proof:</label>
-                <input type="file" id="idProof" name="idProof" accept=".pdf, .jpg, .png" class="file-input">
-            </div>
-        </li>
-        <li class="title">Proof of Residence
-            <div class="form-container">
-                <label for="ownershipProof">Upload Proof of residence:</label>
-                <input type="file" id="ownershipProof" name="ownershipProof" accept=".pdf, .jpg, .png" class="file-input">
-            </div>
-        </li>
-        <li class="title">3 months bank-statements
-            <div class="form-container">
-                <label for="insuranceDocuments">Upload 3 months :</label>
-                <input type="file" id="insuranceDocuments" name="insuranceDocuments" accept=".pdf, .jpg, .png" class="file-input">
-            </div>
-        </li>
-        <li class="title">Valid app profile 
-            <div class="form-container">
-                <label for="serviceHistory">Upload a screenshot of a valid profile :</label>
-                <input type="file" id="serviceHistory" name="serviceHistory" accept=".pdf, .jpg, .png" class="file-input">
-            </div>
-        </li>
-        <!-- Add more items as needed -->
-    </ul>
+<div class="flex-container">
+    <div class="flex-item">
+        <img src="driver.jpeg" alt="Driver Image">
+        <a href="driver.html" class="button-overlay">
+            <div class="button-text">Driver</div>
+        </a>
+    </div>
+    <div class="flex-item">
+        <img src="owner.jpeg" alt="Bike Owner Image">
+        <a href="owner.html" class="button-overlay">
+            <div class="button-text">Bike Owner</div>
+        </a>
+    </div>
 </div>
 
 <div class="footer">
@@ -176,10 +149,6 @@
         <img src="facebook-logo.jpeg" alt="Facebook">
         <img src="instagram-logo.jpeg" alt="Instagram">
     </div>
-</div>
-
-<div class="button-container">
-    <button class="submit-button">Submit</button>
 </div>
 
 </body>
