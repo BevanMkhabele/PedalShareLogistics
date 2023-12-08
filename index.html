@@ -93,19 +93,9 @@
             align-items: center;
         }
 
-        .social-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .social-button:hover {
-            transform: scale(1.2); /* Increase size on hover */
-        }
-
         .social-icons img {
-            max-height: 30px;
+            max-width: 30px;
+            height: auto;
             margin: 0 10px;
         }
     </style>
@@ -117,7 +107,7 @@
     <div>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        a href="#services">Services</a>
+        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
     </div>
 </div>
@@ -129,10 +119,13 @@
 </div>
 
 <div class="footer">
-    <button class="social-button"><img src="whatsapp-logo.jpeg" alt="WhatsApp"></button>
-    <button class="social-button"><img src="telegram-logo.jpeg" alt="Telegram"></button>
-    <button class="social-button"><img src="facebook-logo.jpeg" alt="Facebook"></button>
-    <button class="social-button"><img src="instagram-logo.jpeg" alt="Instagram"></button>
+    <div class="social-icons">
+        <!-- Replace these placeholders with your actual social media logos -->
+        <img src="whatsapp-logo.jpeg" alt="WhatsApp">
+        <img src="telegram-logo.jpeg" alt="Telegram">
+        <img src="facebook-logo.jpeg" alt="Facebook">
+        <img src="instagram-logo.jpeg" alt="Instagram">
+    </div>
 </div>
 
 </body>
