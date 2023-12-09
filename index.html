@@ -1,132 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Navbar with Logo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background: url('background.jpeg') no-repeat center center fixed;
-            background-size: cover;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Header with NSFAS Logo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-        .navbar {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* Sticky header styles */
+    .header {
+      background-color: white;
+      padding: 10px 20px;
+      color: black;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc; /* Add a bottom border */
+      margin-top: 0px; /* Increased top margin by 10px */
+      margin-bottom: 20px; /* Increased bottom margin by 10px */
+    }
 
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px; /* Adjust the spacing between items for smaller screens */
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
-        }
+    /* Profile icon container */
+    .profile-icon {
+      margin-right: 10px;
+    }
 
-        .navbar a:hover {
-            background-color: white;
-            color: black;
-        }
+    /* Open button styles */
+    .open-btn {
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .navbar img {
-            max-height: 30px;
-            border-radius: 4px;
-        }
+    /* Right button styles */
+    .right-btn {
+      background-color: #d45a00; /* Updated to a darker shade of orange */
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
 
-        .content {
-            margin-top: 60px; /* Adjust the margin to prevent content from being hidden behind the fixed navbar */
-            padding: 20px;
-            text-align: center; /* Align the content to the center */
-            font-family: Arial;
-        }
+    /* Hamburger icon styles */
+    .hamburger-icon {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin-bottom: 5px;
+    }
 
-        .content h2 {
-            color: black; /* Set the default color for the h2 */
-            display: inline; /* Make the spans inline */
-        }
+    /* Left navigation bar styles */
+    .navbar {
+      width: 200px;
+      height: 100vh;
+      background-color: #f4f4f4;
+      position: fixed;
+      top: 0;
+      left: -200px;
+      overflow-y: auto;
+      padding-top: 70px;
+      transition: left 0.3s ease;
+    }
 
-        .pedal {
-            color: limegreen; /* Set the color for "share" */
-        }
+    /* Close button styles */
+    .close-btn {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: right;
+      width: 100%;
+    }
 
-        .cta-button {
-            display: inline-block;
-            padding: 5px 10px;
-            font-size: 16px;
-            text-decoration: none;
-            color: black;
-            background-color: limegreen;
-            border-radius: 5px;
-            margin-top: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
-        }
+    /* Style for navbar links */
+    .navbar a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
 
-        .cta-button:hover {
-            background-color: white;
-            color: black;
-        }
+    /* Change link color on hover */
+    .navbar a:hover {
+      background-color: #ddd;
+    }
 
-        .footer {
-            background-color: black;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
+    /* Parent container for flex layout */
+    .flex-container {
+      display: flex;
+      height: 300px;
+    }
 
-        .social-icons img {
-            max-width: 30px;
-            height: auto;
-            margin: 0 10px;
-        }
-    </style>
+    /* Page content styles */
+    .content {
+      padding: 20px;
+      margin-top: 30px;
+      margin-left: 20px;
+      height: 1500px;
+      width: 1fr; /* Set flex to 1 (1fr) */
+    }
+    .Nsfas {
+      color: #d45a00;
+    }
+
+    /* Hero container styles */
+    .hero-container {
+      width: 1fr; /* Set flex to 1 (1fr) */
+      overflow: hidden; /* Hide overflow to prevent scrollbar */
+      position: relative; /* Relative positioning for absolute positioning of the image */
+    }
+
+    /* Hero image styles */
+    .hero-image {
+      width: 100%;
+      animation: moveUpDown 2s ease infinite; /* Add animation */
+    }
+
+    /* Animation keyframes for moving up and down */
+    @keyframes moveUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* NSFAS logo styles */
+    .nsfas-logo {
+      width: auto; /* Set width to auto to maintain original shape */
+      height: 40px;
+    }
+
+    /* Icon styles */
+    .icon {
+      width: 20px; /* Adjust the size as needed */
+      height: 20px;
+      margin-right: 5px; /* Add margin for spacing */
+    }
+
+    /* Styles for the open state of the navbar */
+    .navbar.open {
+      left: 0;
+    }
+
+    /* Additional styles for the new div and button */
+    .new-div {
+      padding: 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .new-button {
+      background-color: #d45a00; /* Updated to a darker shade of orange */
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      font-size: 12px;
+      position: relative;
+    }
+
+    /* Loading circle animation */
+    .loading-circle {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid #d45a00;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 1s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="navbar">
-    <img src="logo.jpeg" alt="Logo">
-    <div>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+  <!-- Header -->
+  <div class="header">
+    <!-- Profile icon container -->
+    <div class="profile-icon">
+      <!-- NSFAS logo -->
+      <img src="NSFASlogo.jpeg" alt="NSFAS Logo" class="nsfas-logo">
     </div>
-</div>
 
-<div class="content">
-    <h2><span class="pedal">Pedal</span> Share</h2>
-    <p>Welcome to Pedal Share, your premier bike rental agency. At Pedal Share, we connect bike owners with those in need of a convenient and eco-friendly transportation solution. Whether you're a bike enthusiast looking to share your ride or a commuter in search of a hassle-free way to get to work, Pedal Share has you covered. Join our community and pedal your way to a sustainable and efficient lifestyle.</p>
-    <a href="choose.html" class="cta-button">Start Your Journey</a>
-</div>
+    <!-- Open Button with Icon -->
+    <button class="open-btn" onclick="toggleNavbar()">
+      <img src="open-btn.jpeg" alt="Open Icon" class="icon">
+    </button>
 
-<div class="footer">
-    <div class="social-icons">
-        <!-- Replace these placeholders with your actual social media logos -->
-        <img src="whatsapp-logo.jpeg" alt="WhatsApp">
-        <img src="telegram-logo.jpeg" alt="Telegram">
-        <img src="facebook-logo.jpeg" alt="Facebook">
-        <img src="instagram-logo.jpeg" alt="Instagram">
+    <!-- Right Button -->
+    <button class="right-btn">myNSFAS</button>
+  </div>
+
+  <!-- Left Navigation Bar -->
+  <div class="navbar" id="navbar">
+    <button class="close-btn" onclick="toggleNavbar()">Close Navbar</button>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Flex Container for Content and Hero Container -->
+  <div class="flex-container">
+    <!-- Page Content -->
+    <div class="content">
+      <h1><span class="Nsfas">NSFAS</span>2024 Applications <span class="Nsfas">are officially</span> opened!</h1>
+      <p>This is a simple example of a web page with a sticky header, a left navigation bar, and buttons to open/close the navbar. Scroll down to see the effect.</p>
+      <!-- Add more content as needed -->
     </div>
-</div>
+
+    <!-- Hero Container with Image -->
+    <div class="hero-container">
+      <img src="hero-3.png" alt="Hero Image" class="hero-image">
+    </div>
+  </div>
+
+  <!-- New div with a button -->
+  <div class="new-div">
+    <button class="new-button" onclick="handleButtonClick()">Upload Documents
+      <div class="loading-circle" id="loadingCircle"></div>
+    </button>
+  </div>
+
+  <script>
+    // Function to toggle the visibility of the navbar
+    function toggleNavbar() {
+      var navbar = document.getElementById('navbar');
+      navbar.classList.toggle('open');
+    }
+
+    // Function to handle button click and show loading circle
+    function handleButtonClick() {
+      var loadingCircle =  document.getElementById('loadingCircle');
+      loadingCircle.style.display = 'inline-block';
+
+      // Simulate some asynchronous task (e.g., AJAX request)
+      setTimeout(function () {
+        // Hide loading circle after the task is completed
+        loadingCircle.style.display = 'none';
+      }, 2000); // Adjust the duration as needed
+    }
+  </script>
 
 </body>
+
 </html>
